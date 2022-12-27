@@ -1,9 +1,13 @@
 using DAL;
 using DAL.DataContext;
+using DAL.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
+                    .AddEntityFrameworkStores<ApplicationDbContext>();
+                    
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 //Adding DbContext  this  uses
@@ -37,6 +41,7 @@ app.UseSwaggerUi3(options =>
 {
     options.Path = "/api";  
 });
+app.UseAuthentication();
 
 app.UseAuthorization();
 
