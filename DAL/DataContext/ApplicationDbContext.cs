@@ -17,9 +17,29 @@ namespace DAL.DataContext
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.Entity<Category>()
+                .HasKey(c => c.Id);
+
+            builder.Entity<Category>()
+                .HasMany(c => c.Products)
+                .WithOne(p => p.Category)
+                .HasForeignKey(p => p.CategoryId)
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<Product>(p =>
+            {
+                p.HasKey(x => x.Id);
+                p.Property(x => x.Price).HasColumnType("decimal(18,4)");
+                p.Property(x => x.Name).IsRequired().HasMaxLength(255);
+                p.Property(x => x.Description).IsRequired().HasMaxLength(600);
+            });
+                
         }
 
-        public DbSet<ApplicationUser> Users { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }
     

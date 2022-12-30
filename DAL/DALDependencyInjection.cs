@@ -1,7 +1,6 @@
-﻿
-
-using DAL.DataContext;
+﻿using DAL.DataContext;
 using DAL.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,9 +15,6 @@ namespace DAL
             {
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnectioin"));
             });
-            //This is for the usermanager 
-            
-
             return services;
         }
     }
