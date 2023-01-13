@@ -1,5 +1,6 @@
 using DAL;
-using DAL.DataContext;  
+using DAL.DataContext;
+using DAL.Interface;
 using DAL.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -13,13 +14,19 @@ var builder = WebApplication.CreateBuilder(args);
 //This is to configure usermanager and userrole
 builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-                    
+//Here we should add that we added dependency while using the repository pattern
+builder.Services.AddScoped<IProductRepository, ProductRepositry>();
+
+builder.Services.AddCors();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 //Adding DbContext this uses
+//we add the data context using a separate class called daldependencyinjection
+//We call the static class from here and pass the configuration parameter from here
 builder.Services.AddDALDependencyInjection(builder.Configuration);
 
 //swagger connection
+//configures the open api document and add jwt bearer authentication
 builder.Services.AddOpenApiDocument(options =>
 {
     options.Title = "ExampleApi";
@@ -32,7 +39,7 @@ builder.Services.AddOpenApiDocument(options =>
     });
     options.OperationProcessors.Add(new AspNetCoreOperationSecurityScopeProcessor("JWT"));
 });
-
+//configuring the jwtbearer authentication
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -70,7 +77,15 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+app.UseHttpsRedirection();  
+//This is to allow any method for spa files to post or get using the url
+app.UseCors(options =>
+{
+    options.AllowAnyHeader()
+    .AllowAnyMethod()
+    .AllowAnyOrigin();
+});
+
 app.UseStaticFiles();
 
 app.UseRouting();

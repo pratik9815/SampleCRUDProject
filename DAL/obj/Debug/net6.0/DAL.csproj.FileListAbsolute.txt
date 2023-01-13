@@ -12,3 +12,17 @@ D:\PratikPractice\ExampleProject\DAL\obj\Debug\net6.0\refint\DAL.dll
 D:\PratikPractice\ExampleProject\DAL\obj\Debug\net6.0\DAL.pdb
 D:\PratikPractice\ExampleProject\DAL\obj\Debug\net6.0\DAL.genruntimeconfig.cache
 D:\PratikPractice\ExampleProject\DAL\obj\Debug\net6.0\ref\DAL.dll
+D:\Dotnet Practice\ExampleProject\DAL\bin\Debug\net6.0\DAL.deps.json
+D:\Dotnet Practice\ExampleProject\DAL\bin\Debug\net6.0\DAL.runtimeconfig.json
+D:\Dotnet Practice\ExampleProject\DAL\bin\Debug\net6.0\DAL.dll
+D:\Dotnet Practice\ExampleProject\DAL\bin\Debug\net6.0\DAL.pdb
+D:\Dotnet Practice\ExampleProject\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+D:\Dotnet Practice\ExampleProject\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dotnet Practice\ExampleProject\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+D:\Dotnet Practice\ExampleProject\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+D:\Dotnet Practice\ExampleProject\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+D:\Dotnet Practice\ExampleProject\DAL\obj\Debug\net6.0\DAL.dll
+D:\Dotnet Practice\ExampleProject\DAL\obj\Debug\net6.0\refint\DAL.dll
+D:\Dotnet Practice\ExampleProject\DAL\obj\Debug\net6.0\DAL.pdb
+D:\Dotnet Practice\ExampleProject\DAL\obj\Debug\net6.0\DAL.genruntimeconfig.cache
+D:\Dotnet Practice\ExampleProject\DAL\obj\Debug\net6.0\ref\DAL.dll

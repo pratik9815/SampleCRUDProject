@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "cokHDAwmgIDmSWc6pe9qYfAaMCfzYDxDu/irWgLeMErneLe4OXjE1PUW0Qepi81ivPEp4jC0MsT6iiTnjHH4dw==",
+  "dgSpecHash": "JBdLb+rMEoFgmeCuEF/wLtrQ3uWZvu8Hpd+M4UVlhoBns91HN0jHC1O9zxZR0vD6ortYpAxmLkiEsnARdtJ39g==",
   "success": true,
-  "projectFilePath": "D:\\PratikPractice\\ExampleProject\\ExampleProject\\ExampleProject.csproj",
+  "projectFilePath": "D:\\Dotnet Practice\\ExampleProject\\ExampleProject\\ExampleProject.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\zagre\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
+    "C:\\Users\\zagre\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\zagre\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.1\\fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
     "C:\\Users\\zagre\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\zagre\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.11\\microsoft.aspnetcore.authentication.jwtbearer.6.0.11.nupkg.sha512",
     "C:\\Users\\zagre\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.11\\microsoft.aspnetcore.cryptography.internal.6.0.11.nupkg.sha512",

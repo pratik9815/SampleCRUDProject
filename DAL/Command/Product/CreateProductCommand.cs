@@ -12,6 +12,6 @@ namespace DAL.Command.Product
         public string Description { get; set; }
         public decimal Price { get; set; }
         public DateTime CreatedDate { get; set; }
-        public Guid CategoryId { get; set; }    
+        public Guid CategoryId { get; set; }
     }
 }

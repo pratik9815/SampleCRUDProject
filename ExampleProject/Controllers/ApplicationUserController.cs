@@ -42,6 +42,7 @@ namespace ExampleProject.Controllers
             return Ok(newUser.UserName);    
         }
         [HttpPost("User-SignIn")]
+        [AllowAnonymous]    
         public async Task<ActionResult> AuthenticateUser([FromBody] AuthenticateRequest request)
         { 
             var identityUser = await _userManager.FindByNameAsync(request.UserName);    
@@ -52,8 +53,11 @@ namespace ExampleProject.Controllers
                 return Unauthorized();
 
             var token = JwtTokenGenerator.GenerateToken(identityUser, _config);
-            return Ok(token);
+            return Ok(new
+            {
+                token = token ,
+            }) ;
 
-        }
+        }   
     }
 }

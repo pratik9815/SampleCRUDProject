@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "oWJtV0Is9Bm8hchY5H0QKBmvsLZPX15Hprv7+6J2gwbGuXwsJGDOh6WqEL58ytpZ5Q8eKu7WdLYMkyFlp3AKRA==",
+  "dgSpecHash": "PCRHCrQveW84WiIka6JjItWgMJvRQqcKt3L7rkptAaEjpF5jz4l9qYQ4K7ZNo1SYKawRKp1wffCthfi9bkVrYQ==",
   "success": true,
-  "projectFilePath": "D:\\PratikPractice\\ExampleProject\\DAL\\DAL.csproj",
+  "projectFilePath": "D:\\Dotnet Practice\\ExampleProject\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\zagre\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
+    "C:\\Users\\zagre\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\zagre\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.1\\fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
     "C:\\Users\\zagre\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\zagre\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.11\\microsoft.aspnetcore.cryptography.internal.6.0.11.nupkg.sha512",
     "C:\\Users\\zagre\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.11\\microsoft.aspnetcore.cryptography.keyderivation.6.0.11.nupkg.sha512",

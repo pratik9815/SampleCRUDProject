@@ -20,13 +20,12 @@ namespace DAL.DataContext
 
             builder.Entity<Category>()
                 .HasKey(c => c.Id);
-
-            builder.Entity<Category>()
-                .HasMany(c => c.Products)
-                .WithOne(p => p.Category)
-                .HasForeignKey(p => p.CategoryId)
-                .IsRequired()
-                .OnDelete(DeleteBehavior.Cascade);
+            //builder.Entity<Category>()
+            //    .HasMany(c => c.Products)
+            //    .WithOne(p => p.Category)
+            //    .HasForeignKey(p => p.CategoryId)
+            //    .IsRequired()
+            //    .OnDelete(DeleteBehavior.Cascade);
 
             builder.Entity<Product>(p =>
             {
@@ -35,11 +34,24 @@ namespace DAL.DataContext
                 p.Property(x => x.Name).IsRequired().HasMaxLength(255);
                 p.Property(x => x.Description).IsRequired().HasMaxLength(600);
             });
+            builder.Entity<Product>()
+                .HasMany(pc =>pc.ProductCategories)
+                .WithOne(p => p.Product)
+                .HasForeignKey(p =>p.ProductId)
+                .IsRequired();
+
+            builder.Entity<Category>()
+                .HasMany(pc => pc.ProductCategories)
+                .WithOne(c => c.Category)
+                .HasForeignKey(c => c.CategoryId)
+                .IsRequired();
                 
         }
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<ProductCategory> ProductCategories { get; set; }
+
     }
 }
     

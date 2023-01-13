@@ -20,34 +20,64 @@ namespace ExampleProject.Controllers
             _context = context;
         }
         [HttpGet("Get-Product")]
-        public async Task<ActionResult<List<Product>>> GetProduct()
+        public async Task<ActionResult<List<Product>>> GetProducts()
         {
             var products = await _context.Products.Select(x => new Product
             {
-                Name =  x.Name,
+                Id = x.Id,
+                Name = x.Name,
                 Description = x.Description,
                 Price = x.Price,
                 CreatedDate = x.CreatedDate,
-                
-
             }).ToListAsync();
-            return(products);   
+            return (products);
         }
+        [HttpGet("Search-Item/{name}")]
+         public async Task<ActionResult<CreateProductCommand>> SearchItem(string name)
+        {
+            var items = await _context.Products.Where(s =>
+             s.Name.Contains(name)).ToListAsync();
+            return Ok(items);
+        }
+
         [HttpPost("Create-Product")]
-        public async Task<ActionResult<string>> CreateProduct(CreateProductCommand product)
+        public async Task<IActionResult> CreateProduct(CreateProductCommand product)
         {
             var newProduct = new Product
             {
                 Name = product.Name,
-                Description= product.Description,
-                CreatedDate = product.CreatedDate,  
+                Description = product.Description,
+                CreatedDate = product.CreatedDate,
                 Price = product.Price,
-                CategoryId = product.CategoryId,
             };
-             _context.Products.Add(newProduct);
-            await _context.SaveChangesAsync();  
-            return Ok("The product has been created");
+            _context.Products.Add(newProduct);
+            await _context.SaveChangesAsync();
+            return Ok();
         }
 
+        [HttpPut("Update-Product/{id}")]
+        public async Task<IActionResult> UpdateProduct([FromRoute]Guid id, [FromBody]Product product)
+        {
+           var getProduct = await _context.Products.FindAsync(id);
+            if (getProduct == null)
+                return BadRequest();
+            getProduct.Name = product.Name;
+            getProduct.Description = product.Description;
+            getProduct.Price = product.Price;
+            await _context.SaveChangesAsync();
+            return Ok(getProduct);
+
+        }
+
+        [HttpDelete("Delete-Product/{id}")]
+        public async Task<IActionResult> DeleteProduct([FromRoute]Guid id)
+        {
+            var product = await _context.Products.FindAsync(id);
+            if(product ==null) return BadRequest();
+            _context.Products.Remove(product);
+            await _context.SaveChangesAsync();
+            return Ok();
+        }
+        
     }
 }
